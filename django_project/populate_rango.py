@@ -46,6 +46,16 @@ def populate():
         title="Flask",
         url="http://flask.pocoo.org")
 
+    frame_cat2 = add_cat(name="Python")
+
+    add_page(cat=frame_cat2,
+        title="Bottle2",
+        url="http://bottlepy.org/docs/dev/")
+
+    add_page(cat=frame_cat2,
+        title="Flask2",
+        url="http://flask.pocoo.org")
+
     # Print out what we have added to the user.
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
