@@ -1,6 +1,6 @@
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
-
+import random
 import django
 django.setup()
 
@@ -12,49 +12,49 @@ def populate():
 
     add_page(cat=python_cat,
         title="Official Python Tutorial",
-        url="http://docs.python.org/2/tutorial/")
+        url="http://docs.python.org/2/tutorial/",views=random.randint(0,100))
 
     add_page(cat=python_cat,
         title="How to Think like a Computer Scientist",
-        url="http://www.greenteapress.com/thinkpython/")
+        url="http://www.greenteapress.com/thinkpython/",views=random.randint(0,100))
 
     add_page(cat=python_cat,
         title="Learn Python in 10 Minutes",
-        url="http://www.korokithakis.net/tutorials/python/")
+        url="http://www.korokithakis.net/tutorials/python/",views=random.randint(0,100))
 
     django_cat = add_cat(name="Django",views=3)
 
     add_page(cat=django_cat,
         title="Official Django Tutorial",
-        url="https://docs.djangoproject.com/en/1.5/intro/tutorial01/")
+        url="https://docs.djangoproject.com/en/1.5/intro/tutorial01/",views=random.randint(0,100))
 
     add_page(cat=django_cat,
         title="Django Rocks",
-        url="http://www.djangorocks.com/")
+        url="http://www.djangorocks.com/",views=random.randint(0,100))
 
     add_page(cat=django_cat,
         title="How to Tango with Django",
-        url="http://www.tangowithdjango.com/")
+        url="http://www.tangowithdjango.com/",views=random.randint(0,100))
 
     frame_cat = add_cat(name="Other Frameworks")
 
     add_page(cat=frame_cat,
         title="Bottle",
-        url="http://bottlepy.org/docs/dev/")
+        url="http://bottlepy.org/docs/dev/",views=random.randint(0,100))
 
     add_page(cat=frame_cat,
         title="Flask",
-        url="http://flask.pocoo.org")
+        url="http://flask.pocoo.org",views=random.randint(0,100))
 
     frame_cat2 = add_cat(name="Python")
 
     add_page(cat=frame_cat2,
         title="Bottle2",
-        url="http://bottlepy.org/docs/dev/")
+        url="http://bottlepy.org/docs/dev/",views=random.randint(0,100))
 
     add_page(cat=frame_cat2,
         title="Flask2",
-        url="http://flask.pocoo.org")
+        url="http://flask.pocoo.org",views=random.randint(0,100))
 
     # Print out what we have added to the user.
     for c in Category.objects.all():
