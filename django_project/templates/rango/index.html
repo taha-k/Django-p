@@ -33,10 +33,17 @@
         {% endif %}
         <a href="{% url 'rango_namespace:about' %}">About</a><br />
         <a href="{% url 'rango_namespace:add_category' %}">Add a New Category</a><br />
+        
         <img src="/static/images/EricCartman.png" alt="Picture of Rango" /> 
         <img src="{% static "images/EricCartman.png" %}" alt="Picture of Rango" />
         <img src="/media/EricCartman.png" alt="Picture of Rango" />
-
+        {% if user.is_authenticated %}
+        <h1>Logged in as {{ user.username }}!</h1>
+        <a href="/rango/logout/">Logout</a><br />
+        {% else %}
+        <a href="/rango/login/">Login</a>
+        <a href="/rango/register/">Register Here</a>
+        {% endif %}
     </body>
 
 </html>
